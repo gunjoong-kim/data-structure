@@ -175,3 +175,17 @@ void BST::print_tree_inorder(t_node_ptr head)
 	std::cout << head->m_key << '\n';
 	print_tree_inorder(head->m_right);
 }
+
+size_t BST::get_height_subtree(t_node_ptr sub_head)
+{
+	if (sub_head == nullptr)
+		return 0;
+	size_t left_h = 1 + get_height_subtree(sub_head->m_left);
+	size_t right_h = 1 + get_height_subtree(sub_head->m_right);
+	return std::max(left_h, right_h);
+}
+
+size_t BST::get_height()
+{
+	return get_height_subtree(this->m_head);
+}
