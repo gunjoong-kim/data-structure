@@ -4,7 +4,15 @@
 #pragma once
 
 #include <iostream>
-#include "Node.hpp"
+
+typedef struct s_node
+{
+	int m_key;
+	struct s_node* m_left;
+	struct s_node* m_right;
+}	t_node;
+
+typedef t_node* t_node_ptr;
 
 class BST
 {

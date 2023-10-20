@@ -8,11 +8,13 @@ class AVL : public BST
 {
 	private:
 		size_t get_balance_factor(t_node_ptr sub_head);
-		void rotate_ll(t_node_ptr parent);
-		void rotate_rr(t_node_ptr parent);
-		void rotate_lr(t_node_ptr parent);
-		void rotate_rl(t_node_ptr parent);
-		void rebalance(t_node_ptr parent);
+		void rotate_ll(t_node_ptr& parent);
+		void rotate_rr(t_node_ptr& parent);
+		void rotate_lr(t_node_ptr& parent);
+		void rotate_rl(t_node_ptr& parent);
+		void rebalance(t_node_ptr& parent);
+		void insert_node_recursive(t_node_ptr& head, int key);
+		void delete_node_recursive(t_node_ptr& head, int key);
 
 	public:
 		AVL() : BST() {}

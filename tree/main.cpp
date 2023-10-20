@@ -1,4 +1,5 @@
 #include "BST.hpp"
+#include "AVL.hpp"
 #include <stdlib.h>
 
 void check_leak()
@@ -8,7 +9,7 @@ void check_leak()
 
 int main()
 {
-	BST test;
+	AVL test;
 
 	test.insert_node(1);
 	test.insert_node(3);
@@ -27,10 +28,10 @@ int main()
 
 	test.print_tree();
 
-	BST copy = test;
+	AVL copy = test;
 	copy.print_tree();
 
-	BST another_copy;
+	AVL another_copy;
 
 	another_copy.insert_node(11);
 	another_copy.insert_node(12);

@@ -38,7 +38,7 @@ void BST::clear_recursive(t_node_ptr start)
 	delete(start);
 }
 
-BST::t_node_ptr BST::copy_recursive(t_node_ptr t)
+t_node_ptr BST::copy_recursive(t_node_ptr t)
 {
 	if (t == nullptr)
 		return nullptr;
@@ -49,12 +49,12 @@ BST::t_node_ptr BST::copy_recursive(t_node_ptr t)
 	return new_tree;
 }
 
-BST::t_node_ptr BST::search_tree(int key)
+t_node_ptr BST::search_tree(int key)
 {
 	return search_recursive(this->m_head, key);
 }
 
-BST::t_node_ptr BST::search_recursive(t_node_ptr head, int key)
+t_node_ptr BST::search_recursive(t_node_ptr head, int key)
 {
 	if (head == nullptr)
 	{
@@ -140,7 +140,7 @@ void BST::delete_recursive(t_node_ptr& head, int key)
 		}
 		else
 		{
-			copy_successor_recursive(head, head);
+			copy_successor_recursive(head->m_right, head);
 		}
 	}
 
