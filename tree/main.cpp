@@ -2,11 +2,6 @@
 #include "AVL.hpp"
 #include <stdlib.h>
 
-void check_leak()
-{
-	system("leaks a.out");
-}
-
 int main()
 {
 	AVL test;
@@ -39,5 +34,4 @@ int main()
 	another_copy.print_tree();
 	another_copy = copy;
 	another_copy.print_tree();
-	atexit(check_leak);
 }
