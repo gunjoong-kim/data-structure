@@ -8,6 +8,7 @@
 typedef struct s_node
 {
 	int m_key;
+	int color;
 	struct s_node* m_left;
 	struct s_node* m_right;
 }	t_node;
